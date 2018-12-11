@@ -61,7 +61,7 @@ if (MSVC)
 endif (MSVC)
 
 #  Look for Qt5
-SET(QT_MIN_VERSION    "5.8.0")
+SET(QT_MIN_VERSION    "5.9.0")
 # Include modules
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/build" ${CMAKE_MODULE_PATH})
 include (FindQt5)
@@ -74,9 +74,9 @@ include (CreatePrecompiledHeader)
 # set(CMAKE_VERBOSE_MAKEFILE ON)
 
 set(CMAKE_AUTOMOC     TRUE)
-set(MSCORE_UNSTABLE   TRUE)          # Mark as unstable
-set(MSCORE_RELEASE_CHANNEL "devel")
-#set(MSCORE_RELEASE_CHANNEL "testing")
+set(MSCORE_UNSTABLE   FALSE)          # Mark as unstable
+#set(MSCORE_RELEASE_CHANNEL "devel")
+set(MSCORE_RELEASE_CHANNEL "testing")
 #set(MSCORE_RELEASE_CHANNEL "stable")
 set(USE_SSE           TRUE)
 set(SCRIPT_INTERFACE  TRUE)
@@ -180,7 +180,7 @@ if (BUILD_AUTOUPDATE STREQUAL "ON")
              if(SPARKLE_FOUND)
                    set(MAC_SPARKLE_ENABLED 1)
                    set(OsxFrameworks ${OsxFrameworks} ${SPARKLE_LIBRARY})
-                   set(MAC_APPCAST_URL "https://sparkle.musescore.org/${MSCORE_RELEASE_CHANNEL}/3/macos/appcast.xml")
+                   set(MAC_APPCAST_URL "https://sparkle.musescore.org/${MSCORE_RELEASE_CHANNEL}/3/macos/appcastQt59.xml")
              endif(SPARKLE_FOUND)
       elseif (MSVC)
              if (NOT MSCORE_UNSTABLE)
